@@ -1,0 +1,5 @@
+#contributor : Lijunpeng <maillijunpeng@gmail.com>
+#name : Create mysql_connet
+# --
+$${1:mysql_id} = mysql_connect('${2:Hostname}','${3:Username}','${4:Password}');
+mysql_select_db('${5:Databases}',$$1);

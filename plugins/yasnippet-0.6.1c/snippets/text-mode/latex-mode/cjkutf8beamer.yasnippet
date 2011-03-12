@@ -1,0 +1,28 @@
+#contributor : Li Junpeng <maillijunpeng@gmail.com>
+#name : Create CJKutf8 beamer
+# --
+
+\documentclass{${1:beamer}}          %幻灯片宏包
+\usepackage{${2:beamerthemesplit}}   %主题风格
+%\usetheme{Hannover}   %主题风格
+\usepackage{${3:graphics}}
+\usepackage{${4:CJKutf8}}            %支持中文
+\begin{document}
+\begin{${5:CJK*}}{${6:UTF8}}{}            %中文支持
+  \CJKfamily{${7:gbsn}}              %字体
+\title{${8:创建一个 CJKutf8 beamer slide}}     %添加标题
+\subtitle{${9:副标题}}           %附标题
+\author{${10:Li Junpeng}}           %添加作者
+\institute{${11:地址、学校、专业}}
+\date{${12:\today{}}}                 %添加日期
+
+\frame{\titlepage{}}            %添加主题幻灯片
+
+\frame{\frametitle{${13:第一张幻灯片标题}}
+\pause{}
+\begin{itemize}
+\item $0
+\end{itemize}
+}
+\end{$5} 
+\end{document}
