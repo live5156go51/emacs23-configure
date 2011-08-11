@@ -1,0 +1,23 @@
+#contributor : Lijunpeng <maillijunpeng@gmail.com>
+#name : xelatex set \setsansfont{} for beamer
+# --
+\documentclass{beamer}          %幻灯片宏包
+\usepackage{beamerthemesplit}   %主题风格
+\usepackage{fontspec}
+%\setmainfont{AR PL UKai CN}
+\setsansfont{AR PL UKai CN}
+\usepackage{graphics}
+\begin{document}
+  \title{这是slide主标题}     %添加标题
+  \subtitle{副标题}           %附标题
+  \author{作者}           %添加作者
+  \institute{比如地址、学校、专业}
+  \date{\today{}}                 %添加日期
+  \frame{\titlepage{}}            %添加主题幻灯片
+  \frame{\frametitle{第一张幻灯片标题}
+    \pause{}
+    \begin{itemize}
+    \item 第一名
+    \end{itemize}
+  }
+\end{document} 

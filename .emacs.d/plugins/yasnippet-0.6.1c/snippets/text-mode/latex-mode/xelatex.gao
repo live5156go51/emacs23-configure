@@ -1,0 +1,45 @@
+#contributor : Lijunpeng <maillijunpeng@gmail.com>
+#name : xelatex use (XeTeX高层源码)ctexart
+# --
+\documentclass[UTF8,adobefonts]{ctexart}
+\usepackage{fontspec}
+\usepackage{xunicode}
+\usepackage{xltxtra}
+\title{XeTex中文高层源码解决方案}
+\author{Junstrix}
+\date{\today}
+\begin{document}
+  \maketitle{}
+ \begin{center}
+   1. 字体示例：\\
+   \begin{tabular}{c|c}
+     \hline
+     \textbf{\TeX 命令} & \textbf{效果}\\
+     \hline
+     \verb|{\songti 宋体}| & {\songti 宋体}\\
+     \hline
+     \verb|{\heiti 黑体}| & {\heiti 黑体}\\
+     \hline
+     \verb|{\fangsong 仿宋}| & {\fangsong 仿宋}\\
+     \hline
+     \verb|{\kaishu 楷书}| & {\kaishu 楷书}\\
+     \hline
+     \verb|{\lishu 隶书}| & {\lishu 隶书}\\
+     \hline
+     \verb|{\youyuan 幼圆}| & {\youyuan 幼圆}\\
+     \hline
+   \end{tabular}
+ \end{center}
+ \begin{center}
+   2. 字号示例：\\
+   {\zihao{0}初号}
+   {\zihao{1}一号}
+   {\zihao{2}二号}
+   {\zihao{3}三号}
+   {\zihao{4}四号}
+   {\zihao{5}五号}
+   {\zihao{6}六号}
+   {\zihao{7}七号}
+   {\zihao{8}八号}
+ \end{center}
+\end{document}

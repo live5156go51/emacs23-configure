@@ -1,0 +1,9 @@
+#contributor : Lijunpeng <maillijunpeng@gmail.com>
+#name : xelatex set \setmainfont{} for document
+# --
+\documentclass{article}
+\usepackage{fontspec}
+\setmainfont{${1:command:fc-list :lang=zh-cn}}
+\begin{document}
+	${2:你好}
+\end{document}
