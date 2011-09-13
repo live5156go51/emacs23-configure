@@ -23,6 +23,9 @@
 ;;配置session.el 列出最近访问
 (require 'session)
 (add-hook 'after-init-hook 'session-initialize)
+;;五笔
+(load "wubi")
+(setq default-input-method "chinese-wubi")
 ;; 最近打开的文件列表
 ;;(require 'recentf)
 ;;(recentf-mode 1)
@@ -62,7 +65,15 @@
 ;;(global-set-key (kbd "s-down") 'tabbar-forward-group)
 ;;(global-set-key (kbd "s-left") 'tabbar-backward)
 ;;(global-set-key (kbd "s-right") 'tabbar-forward)
-
+;;新版本org-mode配置
+(setq load-path (cons "~/.emacs.d/plugins/org-7.7/lisp" load-path))
+(setq load-path (cons "~/.emacs.d/plugins/org-7.7/contrib" load-path))
+(require 'org-install)
+(add-to-list 'auto-mode-alist '("\\.org\\'" . org-mode))
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cb" 'org-iswitchb)
 ;;配置shell-command
 (require 'shell-command)
 (shell-command-completion-mode)
@@ -174,3 +185,30 @@
 (add-hook 'latex-mode-hook 'turn-on-reftex) ; with Emacs latex mode
 (setq TeX-auto-save t)
 (setq TeX-parse-self t)
+
+;;配置ditaa插件ascii艺术 artist-mode
+(setq org-ditaa-jar-path "/tmp/ditaa0_9.jar")
+;(setq org-plantuml-jar-path "~/java/plantuml.jar")
+
+(add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
+
+(org-babel-do-load-languages
+ (quote org-babel-load-languages)
+ (quote ((emacs-lisp . t)
+         (dot . t)
+         (ditaa . t)
+         (R . t)
+         (python . t)
+         (ruby . t)
+         (gnuplot . t)
+         (clojure . t)
+         (sh . t)
+         (ledger . t)
+         (org . t)
+         (plantuml . t)
+         (latex . t))))
+
+; Do not prompt to confirm evaluation
+; ; This may be dangerous - make sure you understand the consequences
+; ; of setting this -- see the docstring for details
+(setq org-confirm-babel-evaluate nil)

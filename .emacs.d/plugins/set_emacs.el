@@ -28,8 +28,8 @@ If the new path's directories does not exist, create them."
     bpath))
 (setq make-backup-file-name-function 'my-backup-file-name)
 ;;配置个人信息
-(setq user-full-name "Li Junpeng")
-(setq user-mail-address "maillijunpeng@gmail.com")
+(setq user-full-name "Junstrix")
+(setq user-mail-address "junstrix@gmail.com")
 ;;配置保存书签
 (setq bookmark-save-flag 1)
 ;;配置默认模式
