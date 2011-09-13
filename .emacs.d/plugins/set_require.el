@@ -2,6 +2,9 @@
 ;;(require 'color-theme)
 ;;配置Emacs直接打开和显示图片
 ;(auto-image-file-mode)
+;;配置hacker matrix
+(add-to-list 'load-path "~/.emacs.d/plugins/matrix")
+(require 'zone-settings)
 ;;配置 mixvm
 (require 'mixvm)
 (autoload 'mixvm "mixvm" "mixvm/gud interaction" t)
@@ -164,9 +167,9 @@
   ;; If there is more than one, they won't work right.
  '(emacs-wiki-header-1 ((t (:inherit variable-pitch :weight bold :height 1.3)))))
 ;;配置ecb-semantic 索引帮助提示 待研究
-;; (require 'cedet)
-;; (semantic-load-enable-code-helpers)
-;; (global-set-key [(control tab)] 'semantic-ia-complete-symbol-menu)
+;;(require 'cedet)
+;;(semantic-load-enable-code-helpers)
+;;(global-set-key [(control tab)] 'semantic-ia-complete-symbol-menu)
 
 ;;配置Tex排版
 ;; (setq TeX-auto-save t)
@@ -187,7 +190,7 @@
 (setq TeX-parse-self t)
 
 ;;配置ditaa插件ascii艺术 artist-mode
-(setq org-ditaa-jar-path "/tmp/ditaa0_9.jar")
+(setq org-ditaa-jar-path "~/.emacs.d/plugins/ditaa/ditaa0_9.jar")
 ;(setq org-plantuml-jar-path "~/java/plantuml.jar")
 
 (add-hook 'org-babel-after-execute-hook 'org-display-inline-images 'append)
